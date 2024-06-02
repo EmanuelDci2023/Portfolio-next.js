@@ -19,10 +19,10 @@ export default function Example() {
         </Button>
       </PopoverHandler>
       <PopoverContent className="w-72 bg-[rgb(12,12,12)]  bg-opacity-40 text-white">
-        <div className="mb-4 flex items-center gap-4 border-b border-blue-gray-50 pb-4">
+        {/* <div className="mb-4 flex items-center gap-4 border-b border-blue-gray-50 pb-4">
           <Avatar src="/nerd.jpg" alt="rusu emanuel" />
           <div></div>
-        </div>
+        </div> */}
         <List className="p-0 text-white-100">
           <Typography
             className="text-lg font-bold"

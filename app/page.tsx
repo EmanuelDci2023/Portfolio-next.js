@@ -19,13 +19,9 @@ export default function Home() {
       <TracingBeam>
         <div className="max-w-7xl w-full bg-[#09090B]">
           <HeroPage />
-          <LampDemo />
-
           <BentoGridThirdDemo />
-
           <Experience />
           <RecentProjects />
-          <Contact />
         </div>
       </TracingBeam>
     </main>
