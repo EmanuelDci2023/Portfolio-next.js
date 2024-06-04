@@ -2,7 +2,6 @@ import {
   Popover,
   PopoverHandler,
   PopoverContent,
-  Avatar,
   Button,
   Typography,
   List,
@@ -18,7 +17,7 @@ export default function Example() {
           Contact me
         </Button>
       </PopoverHandler>
-      <PopoverContent className="w-72 bg-[rgb(12,12,12)]  bg-opacity-40 text-white">
+      <PopoverContent className="w-72 bg-[rgb(12,12,12)]  bg-opacity-40 text-white z-50">
         {/* <div className="mb-4 flex items-center gap-4 border-b border-blue-gray-50 pb-4">
           <Avatar src="/nerd.jpg" alt="rusu emanuel" />
           <div></div>

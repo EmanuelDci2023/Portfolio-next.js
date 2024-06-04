@@ -1,48 +1,27 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
-import { supabase } from "@/supabase";
-
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { sendEmail } from "@/utils/send-email";
+import { useForm } from "react-hook-form";
+
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const { register, handleSubmit } = useForm<FormData>();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const { data, error } = await supabase
-        .from("messages")
-        .insert([formData]);
-
-      if (error) {
-        throw error;
-      }
-
-      console.log("Form data submitted successfully:", data);
-      // Optionally, display a success message to the user
-    } catch (error) {
-      console.error("Error submitting form data:", error.message);
-      // Optionally, display an error message to the user
-    }
-  };
+  function onSubmit(data: FormData) {
+    sendEmail(data);
+  }
 
   return (
-    <div className="mt-40 max-w-7xl min-h-[70vh] px-10">
-      <h2 className="text-3xl lg:text-6xl text-white text-center mb-40 tracking-tight font-extrabold">
+    <div className="mt-20 max-w-7xl max-h[90vh] px-10 ">
+      <h2 className="text-3xl lg:text-6xl text-white text-center mb-20 tracking-tight font-extrabold">
         Hire Me!
       </h2>
       <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 gap-8">
@@ -63,6 +42,7 @@ const Contact = () => {
             }}
           >
             <Link
+              className="cursor-pointer"
               href="https://www.linkedin.com/in/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
@@ -85,10 +65,10 @@ const Contact = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-black-200 flex flex-col rounded-2xl">
+        <div className="bg-black flex flex-col rounded-2xl">
           <form
-            onSubmit={handleSubmit}
-            className="flex flex-col p-6 text-black"
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col p-6 text-[black] bg-gradient-to-r from-pink-800 to-violet-900 rounded-2xl"
           >
             <label className="mb-2 text-white-100" htmlFor="name">
               Name
@@ -97,11 +77,8 @@ const Contact = () => {
               className="bg-white py-2 px-4 rounded-lg mb-4"
               type="text"
               placeholder="Your Name"
-              name="name"
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
               required
+              {...register("name", { required: true })}
             />
             <label className="mb-2 text-white-100" htmlFor="email">
               Email
@@ -110,27 +87,24 @@ const Contact = () => {
               className="bg-white py-2 px-4 rounded-lg mb-4"
               type="email"
               placeholder="Email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
               required
+              {...register("email", { required: true })}
             />
+
             <label className="mb-2 text-white-100" htmlFor="message">
               Message
             </label>
             <textarea
               className="bg-white py-2 px-4 rounded-lg mb-4"
               placeholder="Enter your message"
-              name="message"
-              id="message"
+              rows={4}
               required
-              value={formData.message}
-              onChange={handleChange}
+              {...register("message", { required: true })}
             />
             <button
               type="submit"
-              className="mdLg:ml-6 cursor-pointer rounded-full bg-gradient-to-r from-pink-800 to-violet-900 p-3 text-base text-slate-200 hover:from-pink-700 hover:to-violet-800"
+              value="Submit"
+              className="mdLg:ml-6 cursor-pointer rounded-full bg-white text-black py-2 px-4 mdLg:py-3 mdLg:px-6 mdLg:text-lg font-bold hover:bg-[#f0f0f0] transition duration-300 ease-in-out mt-4 mdLg:mt-6"
             >
               Submit
             </button>

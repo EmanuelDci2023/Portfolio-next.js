@@ -1,5 +1,6 @@
+"use client";
+
 import Contact from "@/components/Contact";
-import { SignupFormDemo } from "@/components/SingUpForm";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 function page() {

@@ -3,16 +3,15 @@
 import ColorButtons from "@/components/ColorButtons";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
-import { BackgroundBeams } from "./ui/background-beams";
-import { AuroraBackground } from "./ui/aurora-background";
 import ContactButton from "@/components/ContactButton";
+import { BentoGridThirdDemo } from "./BentoGrid";
+import MainSkills from "@/components/MainSkills";
 
 const HeroPage = () => {
   const texts = [
     "I'm a web developer",
-    "I'm a nerd",
-    "I'm also addicted to TECH",
+    "I'm also a nerd",
+    "I'm a lifelong learner",
   ];
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -44,33 +43,37 @@ const HeroPage = () => {
   }, [displayedText, isDeleting, loopNum, typingSpeed, texts]);
 
   return (
-    <div className="pt-36 mdLg:flex-row mdLg:flex     mdLg:justify-between mdLg:px-4   mdLg:mb-[2rem]   flex w-full flex-col items-center p-6 ">
-      <div className=" mdLg:w-[60%] mdLg:text-left w-[100%] text-center tracking-widest text-slate-300">
-        <h1 className="mdLg:text-4xl mb-6 inline-block bg-gradient-to-r from-pink-800 to-violet-900 bg-clip-text text-3xl  font-bold text-transparent lg:text-6xl ">
-          Hello,I'm Emanuel
-        </h1>
+    <div className="flex flex-col max-h[100vh] min-h-screen huge:py-20">
+      <div className="pt-28 mdLg:flex-row mdLg:flex     mdLg:justify-between mdLg:px-4   mdLg:mb-[1rem]   flex w-full flex-col items-center p-4 ">
+        <div className=" mdLg:w-[60%] mdLg:text-left w-[100%] text-center tracking-widest text-slate-300">
+          <h1 className="mdLg:text-4xl mb-6 inline-block bg-gradient-to-r from-pink-800 to-violet-900 bg-clip-text text-3xl  font-bold text-transparent lg:text-6xl ">
+            Hello,I'm Emanuel
+          </h1>
 
-        <h2 className=" mdLg:text-3xl mb-4 font-mono text-2xl">
-          {displayedText}.
-        </h2>
-        <p className="mb-4 text-[#b6b6b6]">
-          Welcome to my digital playground, where lines of code transform into
-          immersive online experiences. I'm Allen, a passionate and innovative
-          web developer dedicated to crafting elegant and efficient solutions.
-        </p>
+          <h2 className=" mdLg:text-3xl mb-4 font-mono text-2xl">
+            {displayedText}.
+          </h2>
+          <p className="mb-4 text-[#b6b6b6]">
+            Welcome to my digital playground, where lines of code transform into
+            immersive online experiences. I'm Allen, a passionate and innovative
+            web developer dedicated to crafting elegant and efficient solutions.
+          </p>
 
-        <ContactButton />
-        <ColorButtons />
+          <ContactButton />
+          <ColorButtons />
+        </div>
+        <div>
+          <Image
+            className="rounded-full"
+            src="/avatar1.png"
+            alt="avatar"
+            width={200}
+            height={200}
+          />
+        </div>
       </div>
-      <div>
-        <Image
-          className="rounded-full"
-          src="/avatar3.jpeg"
-          alt="avatar"
-          width={200}
-          height={200}
-        />
-      </div>
+      <BentoGridThirdDemo />
+      <MainSkills />
     </div>
   );
 };

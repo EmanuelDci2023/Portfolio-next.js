@@ -41,6 +41,7 @@ const config = {
         logo2: "url('/logo2.jpeg')",
         logo3: "url('/logo3.jpg')",
         logo4: "url('/logo4.jpg')",
+        logo5: "url('/logo5.png')",
         bg1: "url('/bg1.jpg')",
         bg2: "url('/bg2.jpg')",
         bg3: "url('/bg3.jpg')",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { TracingBeam } from "@/components/ui/tracing-beam";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
@@ -11,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Emanuel's Portfolio",
   description:
-    "This is my portofolio created with Next.js with a minimalistic design",
+    "This is my portofolio created with Next.js, Tailwind CSS, and TypeScript.",
 };
 
 export default function RootLayout({
@@ -22,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
+        <link rel="icon" href="/logo4.jpg" sizes="any" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
