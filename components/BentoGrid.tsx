@@ -5,7 +5,7 @@ import { skills } from "@/lib/data";
 
 export function BentoGridThirdDemo() {
   return (
-    <div className="flex flex-col justify-center items-center mt-4 mb-4 lg:mt-40">
+    <div className="flex flex-col justify-center items-center mt-4 mb-4 lg:mt-40 px-4">
       <BentoGrid className="max-w-7xl mx-auto">
         {skills.map((skill, i) => (
           <BentoGridItem

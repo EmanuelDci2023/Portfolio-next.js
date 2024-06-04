@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { sendEmail } from "@/utils/send-email";
 import { useForm } from "react-hook-form";
+import Image from "next/image";
 
 export type FormData = {
   name: string;
@@ -20,11 +20,11 @@ const Contact = () => {
   }
 
   return (
-    <div className="mt-20 max-w-7xl max-h[90vh] px-10 ">
-      <h2 className="text-3xl lg:text-6xl text-white text-center mb-20 tracking-tight font-extrabold">
-        Hire Me!
+    <div className="mt-20 max-w-7xl min-h-[80vh] px-10 ">
+      <h2 className="text-3xl lg:text-6xl text-white text-center mb-20 tracking-tight font-extrabold mt-20">
+        Hire <span className="text-purple">Me!</span>
       </h2>
-      <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 gap-8">
+      <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 gap-8 mt-60">
         <div>
           <h3 className="font-bold mb-8 text-gray-100 tracking-wider text-xl">
             LET'S CONNECT
@@ -47,21 +47,21 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin size={30} color="#fff" />
+              <FaLinkedin size={30} color="#f5f5f5" />
             </Link>
             <Link
-              href="https://github.com/yourprofile"
+              href="https://github.com/Rusu91-webdeveloper"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub size={30} color="#fff" />
+              <FaGithub size={30} color="#f5f5f5" />
             </Link>
             <Link
               href="mailto:your.email@example.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaEnvelope size={30} color="#fff" />
+              <FaEnvelope size={30} color="#f5f5f5" />
             </Link>
           </div>
         </div>
@@ -70,32 +70,32 @@ const Contact = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col p-6 text-[black] bg-gradient-to-r from-pink-800 to-violet-900 rounded-2xl"
           >
-            <label className="mb-2 text-white-100" htmlFor="name">
+            <label className="mb-2 text-white" htmlFor="name">
               Name
             </label>
             <input
-              className="bg-white py-2 px-4 rounded-lg mb-4"
+              className="bg-slate-100 py-2 px-4 rounded-lg mb-4"
               type="text"
               placeholder="Your Name"
               required
               {...register("name", { required: true })}
             />
-            <label className="mb-2 text-white-100" htmlFor="email">
+            <label className="mb-2 text-white" htmlFor="email">
               Email
             </label>
             <input
-              className="bg-white py-2 px-4 rounded-lg mb-4"
+              className="bg-slate-100 py-2 px-4 rounded-lg mb-4"
               type="email"
               placeholder="Email"
               required
               {...register("email", { required: true })}
             />
 
-            <label className="mb-2 text-white-100" htmlFor="message">
+            <label className="mb-2 text-white" htmlFor="message">
               Message
             </label>
             <textarea
-              className="bg-white py-2 px-4 rounded-lg mb-4"
+              className="bg-slate-100 py-2 px-4 rounded-lg mb-4"
               placeholder="Enter your message"
               rows={4}
               required

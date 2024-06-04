@@ -8,6 +8,7 @@ import {
   ListItem,
   ListItemPrefix,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 export default function Example() {
   return (
@@ -56,7 +57,13 @@ export default function Example() {
                   />
                 </svg>
               </ListItemPrefix>
-              Free Lancer
+              <Link
+                href="https://github.com/Rusu91-webdeveloper"
+                target="_blank"
+              >
+                {" "}
+                Free Lancer
+              </Link>
             </ListItem>
           </a>
           <a href="#" className="text-initial font-medium text-blue-gray-500">
