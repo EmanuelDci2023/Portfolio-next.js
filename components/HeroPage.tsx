@@ -60,7 +60,6 @@ const HeroPage = () => {
           </p>
 
           <ContactButton />
-          <ColorButtons />
         </div>
         <div>
           <Image

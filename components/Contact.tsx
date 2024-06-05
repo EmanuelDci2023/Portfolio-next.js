@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { sendEmail } from "@/utils/send-email";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
+
 
 export type FormData = {
   name: string;
